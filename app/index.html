@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitschrift Online</title>
+    <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
+    <script type="text/javascript" src="vendors/socket.io-client/socket.io.js"></script>
+</head>
+
+<body>
+    <header>
+        <span id="header-start" class="header-label">Mitschrift Online</span>
+    </header>
+    <div id="start-screen">
+        <div id="lecture-search">
+            <select id="select-list">
+                <option value="alle-vorlesungen">Alle Vorlesungen</option>
+                <optgroup id="medieninformatik" label="Medieninformatik">
+                    <option value="multimedia-technology">{{lecture-name}}</option>
+                </optgroup>
+                <optgroup id="medienwissenschaft" label="Medienwissenschaft">
+                </optgroup>
+            </select>
+            <div id="search-results">
+                <span id="label">Es wurden 0 Vorlesungen im Fach Medieninformatik gefunden</span>
+            </div>
+        </div>
+        <div id="note-list">
+
+        </div>
+        <div id="new-note-container">
+            <div id="background" class="hidden"></div>
+            <div id="new-note-formular" class="hidden">
+                <span id="label-note">Neue Mitschrift anlegen</span>
+                <span id="label-info">Mitschriftname eingeben und, falls vorhanden, Vorlesung auswählen</span>
+                <input id="input-description" type="text" placeholder="Mitschriftname">
+                <select id="select-lecture">
+                    <optgroup label="Medieninformatik">
+                        <option value="multimedia-technology">Multimedia Technology</option>
+                        <option value="multimedia-engineering">Multimedia Engineering</option>
+                    </optgroup>
+                    <optgroup label="Medienwissenschaft">
+                        <option value="medientheorie">Medientheorie</option>
+                    </optgroup>
+                </select>
+                <span id="label-lecture">oder Vorlesung neu anlegen</span>
+                <input id="input-lecture" type="text" placeholder="Vorlesung">
+                <select id="select-subject">
+                    <optgroup label="Studienfächer">
+                        <option value="medieninformatik">Medieninformatik</option>
+                        <option value="medienwissenschaft">Medienwissenschaft</option>
+                    </optgroup>
+                </select>
+                <span id="label-hint" class="hidden"></span>
+                <div id="buttons">
+                    <button id="cancel-button" type="button">Abbrechen</button>
+                    <button id="add-button" type="button">Hinzufügen</button>
+                </div>
+            </div>
+            <div id="new-note-button">+</div>
+        </div>
+        <template id="select-template"></template>
+        <template id="note-template">
+            <div class="note-entry">
+                <span class="note-info">
+                    <span class="note-description">{{description}}</span>
+                    <span class="note-date">Erstellt am {{date}}</span>
+                </span>
+                <span class="note-status">
+                    <span class="note-current-editors">{{editors}}/8 im Bearbeitungsmodus</span>
+                    <span class="note-completed">offen</span>
+                </span>
+                <span class="note-studies">
+                    <span class="note-lecture">{{lecture}}</span>
+                    <span class="note-subject">{{subject}}</span>
+                </span>
+            </div>
+        </template>
+    </div>
+
+    <div id="edit-note-screen" class="hidden">
+        <header>
+            <div id="header-edit-note" class="header-label">
+                <span id="header-back-button">Zurück zur Startseite</span>
+                <span id="header-label-description"></span>
+                <span>/</span>
+                <span id="header-label-lecture"></span>
+                <span id="header-label-subject"></span>
+                <span>/</span>
+                <span id="header-label-editors">aktuelle Bearbeiter: 0</span>
+            </div>
+        </header>
+        <div id="edit-note-container">
+            <textarea></textarea>
+        </div>
+    </div>
+</body>
+
+<script type="module" src="resources/js/index.js"></script>
+
+</html>

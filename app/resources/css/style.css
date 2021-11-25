@@ -1,0 +1,263 @@
+html {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    background: rgb(255, 255, 255);
+    background-image: url("background.jpg"); /* Quelle: https://unsplash.com/photos/ewGMqs2tmJI */
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #000;
+}
+
+header {
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(0, 0, 0, 0.2);
+}
+
+header .header-label {
+    display: inline-block;
+    /* line-height = height zentriert Text vertikal */
+    height: 10vh;
+    line-height: 10vh;
+    color: #FAFAFA;
+    margin-left: 2.5vh;
+    font-size: 3.5vh;
+    font-weight: bold;
+    letter-spacing: 0.1vh;
+}
+
+/************************* START SCREEN *************************/
+
+#lecture-search {
+    margin: 2vh 5vh;
+}
+
+#lecture-search select {
+    padding: 1vh;
+    color: rgb(40, 40, 40);
+}
+
+#lecture-search #search-results {
+    display: inline-block;
+    margin-left: 1vh;
+}
+
+#lecture-search #search-results #label {
+    font-size: 2vh;
+    color: rgb(40, 40, 40);
+}
+
+/***** NEW NOTE FORMULAR *****/
+
+#new-note-container #background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+#new-note-formular {
+    position: absolute;
+    right: 8vh;
+    bottom: 31vh;
+    width: 15vw;
+    height: 15vw;
+}
+
+#new-note-formular input {
+    padding: 0.8vh;
+    margin: 1vh 0 1vh 0;
+    width: 30vh;
+}
+
+#new-note-formular select {
+    padding: 0.8vh;
+    margin: 1vh 0 1vh 0;
+    width: 32.5vh;
+}
+
+#new-note-formular button {
+    padding: 0.9vh;
+}
+
+#new-note-formular #buttons {
+    display: block;
+    width: 100%;
+    margin-top: 2vh;
+}
+
+#new-note-formular #cancel-button {
+    position: absolute;
+    left: 0;
+}
+
+#new-note-formular #add-button {
+    position: absolute;
+    right: 0;
+}
+
+#new-note-formular #label-note {
+    font-size: 2.5vh;
+}
+
+#new-note-formular #label-info {
+    display: block;
+    font-size: 1.5vh;
+    line-height: 2vh;
+    margin-bottom: 1vh;
+    text-align: justify;
+}
+
+#new-note-formular #label-lecture {
+    display: block;
+    font-size: 1.5vh;
+    margin-top: 1.5vh;
+}
+
+#new-note-formular #label-hint {
+    display: block;
+    font-size: 1.5vh;
+    color: rgb(228, 39, 39);
+    font-weight: bold;
+}
+
+#new-note-button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 3vh;
+    right: 3vh;
+    width: 11vh;
+    height: 11vh;
+    background-color: rgb(0, 0, 0);
+    border-radius: 100%;
+    font-size: 7vh;
+    color: rgba(255, 255, 255);
+    cursor: pointer;
+}
+
+/***** TEMPLATE *****/
+
+#note-list .note-entry {
+    position: relative;
+    margin: 1vh 5vh;
+    padding: 1.5vh;
+    background-color: rgb(255, 187, 40);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.068);
+    cursor: pointer;
+}
+
+#note-list .note-entry:hover {
+    color: rgb(255,255,255);
+}
+
+#note-list .note-entry .note-info {
+    width: 30%;
+}
+
+#note-list .note-entry .note-description {
+    font-size: 2.5vh;
+}
+
+#note-list .note-entry .note-date {
+    display: block;
+    font-size: 1.5vh;
+}
+
+#note-list .note-entry .note-status {
+    position: absolute;
+    top: 3vh;
+    right: 40%;
+    width: 20%;
+    font-size: 2vh;
+}
+
+#note-list .note-entry .note-status .note-completed {
+    padding: 0.3vh 0.9vh;
+    background-color: rgb(241, 241, 241);
+    margin-left: 2vh;
+    font-weight: bold;
+}
+
+#note-list .note-entry .note-studies {
+    position: absolute;
+    top: 3vh;
+    right: 0;
+    width: 30%;
+    font-size: 2vh;
+    color: rgb(255, 255, 255);
+}
+
+#note-list .note-entry .note-studies span {
+    padding: 0.3vh 0.9vh;
+    background-color: rgb(239, 79, 81);
+}
+
+#note-list .note-entry .note-studies .note-lecture {
+    background-color: rgb(43, 43, 43);
+}
+
+#note-list .note-entry .note-subject {
+    margin-left: 3vh;
+}
+
+/************************* EDIT NOTE SCREEN *************************/
+
+#edit-note-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-y: hidden;
+}
+
+header #header-edit-note #header-back-button {
+    display: inline-block;
+    margin-right: 3vh;
+    color: #FFF;
+    font-size: 2.65vh;
+    letter-spacing: 0;
+    cursor: pointer;
+}
+header #header-edit-note #header-back-button:hover {
+    color:rgb(255, 187, 40);
+}
+
+header #header-edit-note #header-label-lecture {
+    font-size: 3vh;
+    color: #000;
+}
+
+header #header-edit-note #header-label-subject {
+    font-size: 3vh;
+    color: rgb(255, 187, 40);
+}
+
+header #header-edit-note #header-label-editors {
+    font-size: 3vh;
+}
+
+#edit-note-container {
+    padding-bottom: 5vh;
+}
+
+.CodeMirror {
+    padding: 2vh;
+    height: 75vh;
+    cursor: text;
+}
+
+.hidden {
+    display: none !important;
+}

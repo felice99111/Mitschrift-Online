@@ -1,0 +1,5 @@
+# Quellcode (Client)
+
+Die gesamte Anwendung ist in ES6 Modulen konzipiert. Diese sind in den Kategorien Client (`socket.io`), Data und User Interface untergliedert. Die Module selbst werden im Zentrum des Codes `app\resources\js\index.js` initialisiert bzw. Event-Listener registiert. Die Kommunikation erfolgt über definierte Callbacks, die auf die öffentlichen Funktionen der einzelnen Module zurückgreifen und somit die verscheidenen Bereiche (Client, Data, UI) verbinden. Öffentliche Funktionen bedeutet in diesem Fall, dass jedes Modul nur die "wesentlichsten" Funktionen nach außen zur Verfügung stellt. Die Komplexität befindet sich innerhalb der Module und wird so gut es geht nach außen reduziert.
+
+Die Idee Hinter `socket.io` ist alle Editiervorgänge bei einer Mitschrift für alle anderen User zugänglich zu machen, die diese Mitschrift entweder selbst betrachten oder betrachten möchten. `socket.io` kommuniziert somit alle Änderungen (bzw. das Erstellen selbst) einer Mitschrift, um alle Nutzer auf den selben Stand des Tools zu bringen.
